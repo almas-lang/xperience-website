@@ -1,0 +1,12 @@
+# Robots.txt for Xperience Wave
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://www.xperiencewave.com/sitemap.xml
+
+# Crawl-delay for courtesy
+Crawl-delay: 1
