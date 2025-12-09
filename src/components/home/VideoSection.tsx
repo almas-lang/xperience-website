@@ -19,7 +19,7 @@ export default function VideoSection() {
 
         {/* Video Container */}
         <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-8 cursor-pointer group" onClick={handlePlayClick}>
-          <div className="aspect-video bg-gray-200 flex items-center justify-center relative">
+          <div className="aspect-video bg-gray-200 relative">
             {/* Video Thumbnail */}
             <img
               src="/assets/home_thumb.png"
@@ -30,12 +30,12 @@ export default function VideoSection() {
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-200" />
             {/* Play Button */}
             <button
-              className="relative z-10 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200"
               onClick={handlePlayClick}
               aria-label="Play video"
             >
               <svg
-                className="w-8 h-8 text-primary ml-1"
+                className="w-6 h-6 sm:w-8 sm:h-8 text-primary ml-1"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >

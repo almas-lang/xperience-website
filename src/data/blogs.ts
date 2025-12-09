@@ -1024,7 +1024,7 @@ export const blogs: Blog[] = [
     excerpt: 'Discover how mixed-methods research combines qualitative and quantitative insights to make smarter UX design decisions. Learn practical techniques for analyzing user behavior and validating solutions.',
     intro: 'Imagine you\'re developing a new app. You know what people do (they tap this button, they abandon the checkout process), but you don\'t know why. You have the "what" from your analytics, but you\'re missing the crucial "why" from user feedback. This is the classic dilemma in user research. By blending quantitative and qualitative approaches, you can create a powerful synergy that gives you a complete, 360-degree view of your users.',
     readTime: '8 min read',
-    image: 'https://xperiencewave.com/wp-content/uploads/2025/09/female-web-designer-office-with-notebook-scaled.jpg',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
     sections: [
       {
         type: 'heading',

@@ -266,20 +266,24 @@ export default function HeroSection() {
               </a>
 
               {/* Stats */}
-              <div className="flex items-start gap-6 lg:gap-8 pt-2 animate-slideInUp" style={{ animationDelay: '0.4s' }}>
-                {/* <div className="group cursor-default">
-                  <p className="text-3xl lg:text-4xl font-bold text-text-header transition-all duration-300 group-hover:text-primary group-hover:scale-110">45+</p>
-                  <p className="text-text-body text-sm mt-0.5">Courses</p>
-                </div>
-                <div className="w-px h-16 bg-gray-300"></div>
-                <div className="group cursor-default">
-                  <p className="text-3xl lg:text-4xl font-bold text-text-header transition-all duration-300 group-hover:text-primary group-hover:scale-110">29+</p>
-                  <p className="text-text-body text-sm mt-0.5">Mentors</p>
-                </div> */}
-                {/* <div className="w-px h-16 bg-gray-300"></div> */}
+              <div className="flex items-start gap-6 lg:gap-8 pt-2 animate-slideInUp flex-wrap" style={{ animationDelay: '0.4s' }}>
                 <div className="group cursor-default">
                   <p className="text-3xl lg:text-4xl font-bold text-text-header transition-all duration-300 group-hover:text-primary group-hover:scale-110">3000+</p>
                   <p className="text-text-body text-sm mt-0.5">Designers Consulted</p>
+                </div>
+
+                <div className="w-px h-16 bg-gray-300 hidden sm:block"></div>
+
+                <div className="group cursor-default">
+                  <p className="text-3xl lg:text-4xl font-bold text-text-header transition-all duration-300 group-hover:text-primary group-hover:scale-110">8.9/10</p>
+                  <p className="text-text-body text-sm mt-0.5">Average satisfaction</p>
+                </div>
+
+                <div className="w-px h-16 bg-gray-300 hidden sm:block"></div>
+
+                <div className="group cursor-default">
+                  <p className="text-3xl lg:text-4xl font-bold text-text-header transition-all duration-300 group-hover:text-primary group-hover:scale-110">94%</p>
+                  <p className="text-text-body text-sm mt-0.5">Achieved primary goal</p>
                 </div>
               </div>
             </div>
