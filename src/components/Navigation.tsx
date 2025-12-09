@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 
@@ -33,13 +32,10 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image
+            <img
               src="/assets/logo.png"
               alt="Xperience Wave"
-              width={150}
-              height={50}
               className="h-14 w-auto"
-              priority
             />
           </Link>
 
@@ -145,7 +141,11 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-text-body hover:text-primary transition-colors duration-200 text-base font-medium"
+                className={`text-text-body hover:text-primary transition-colors duration-200 text-base font-medium pb-1 ${
+                  pathname === link.href
+                    ? 'text-primary border-b-2 border-primary'
+                    : ''
+                }`}
               >
                 {link.name}
               </Link>
