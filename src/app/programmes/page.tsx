@@ -861,8 +861,10 @@ export default function Programmes() {
             )}
 
             <div className="text-center mt-8">
-              <Link
-                href="/contact"
+              <a
+                href={process.env.NEXT_PUBLIC_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`inline-flex items-center gap-2 text-white font-semibold py-4 px-8 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-200 ${
                   activeTab === 'ripple' ? 'bg-gradient-to-r from-blue-500 to-indigo-600' :
                   activeTab === 'current' ? 'bg-gradient-to-r from-purple-500 to-purple-700' :
@@ -873,7 +875,7 @@ export default function Programmes() {
               >
                 Book a free strategy call
                 <span>→</span>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -1010,8 +1012,10 @@ export default function Programmes() {
               <p className="text-sm text-text-body mb-3">
                 {activeTab === 'surge' ? 'To get in touch please' : content.cta.secondaryDescription}
               </p>
-              <Link
-                href="/contact"
+              <a
+                href={process.env.NEXT_PUBLIC_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`block w-full text-white px-8 py-4 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-200 font-semibold ${
                   activeTab === 'ripple' ? 'bg-gradient-to-r from-blue-500 to-indigo-600' :
                   activeTab === 'current' ? 'bg-gradient-to-r from-purple-500 to-purple-700' :
@@ -1021,7 +1025,7 @@ export default function Programmes() {
                 }`}
               >
                 {activeTab === 'surge' ? 'Book a consultation' : content.cta.secondary}
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -1085,8 +1089,10 @@ export default function Programmes() {
           <p className="text-xl sm:text-2xl text-white leading-relaxed mb-8 whitespace-pre-line">
             {content.testimonial}
           </p>
-          <Link
-            href="/contact"
+          <a
+            href={process.env.NEXT_PUBLIC_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`inline-flex items-center gap-2 font-semibold py-4 px-8 rounded-xl transition-all duration-200 shadow-lg ${
               activeTab === 'tide'
                 ? 'bg-gradient-to-r from-red-400 to-pink-500 text-white hover:from-red-500 hover:to-pink-600'
@@ -1095,7 +1101,7 @@ export default function Programmes() {
           >
             {activeTab === 'surge' ? 'Book a consultation' : 'Book a free strategy call'}
             <span>→</span>
-          </Link>
+          </a>
         </div>
       </section>
 
