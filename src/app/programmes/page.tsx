@@ -942,12 +942,12 @@ export default function Programmes() {
           <div className="flex flex-wrap justify-center gap-6 items-center">
             {content.tools.map((tool, index) => {
               const logoMap: { [key: string]: string } = {
-                'Calendly': '/assets/brands/Calendly.svg',
-                'Google Forms': '/assets/brands/googleForms.webp',
-                'SurveyMonkey': '/assets/brands/surveyMonkey.webp',
-                'Dovetail': '/assets/brands/dovetail.png',
-                'Hotjar': '/assets/brands/hotjar.webp',
-                'Microsoft Clarity': '/assets/brands/clarity.png',
+                'Calendly': '/assets/Brands/Calendly.svg',
+                'Google Forms': '/assets/Brands/googleForms.webp',
+                'SurveyMonkey': '/assets/Brands/surveyMonkey.webp',
+                'Dovetail': '/assets/Brands/dovetail.png',
+                'Hotjar': '/assets/Brands/hotjar.webp',
+                'Microsoft Clarity': '/assets/Brands/clarity.png',
               };
 
               return (
