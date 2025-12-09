@@ -168,9 +168,20 @@ export default function HireDesigners() {
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full border-2 border-accent text-accent hover:bg-accent hover:text-white px-4 py-3 rounded-xl transition-all duration-200 font-semibold">
-                  Request Interview
-                </button>
+                {designer.linkedin ? (
+                  <a
+                    href={designer.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full border-2 border-accent text-accent hover:bg-accent hover:text-white px-4 py-3 rounded-xl transition-all duration-200 font-semibold block text-center"
+                  >
+                    View Profile
+                  </a>
+                ) : (
+                  <button className="w-full border-2 border-gray-300 text-gray-400 px-4 py-3 rounded-xl cursor-not-allowed font-semibold">
+                    Profile Unavailable
+                  </button>
+                )}
               </div>
             ))}
           </div>

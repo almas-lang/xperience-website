@@ -42,12 +42,14 @@ export default function StatsSection() {
         <div className="mt-12">
           <div className="w-full aspect-video bg-gray-200 rounded-3xl overflow-hidden shadow-lg">
             <video
-              src="/assets/reviews/Pavi_Suji.mov"
               poster="/assets/reviews/pavitra.png"
               className="w-full h-full object-cover"
               controls
               playsInline
+              preload="metadata"
             >
+              <source src="/assets/reviews/Pavi_Suji.mp4" type="video/mp4" />
+              <source src="/assets/reviews/Pavi_Suji.mov" type="video/quicktime" />
               Your browser does not support the video tag.
             </video>
           </div>

@@ -594,14 +594,14 @@ export default function Programmes() {
       </section>
 
       {/* You're Here & You Want to Achieve Section */}
-      <section className="py-16 lg:py-20 bg-white relative overflow-hidden">
+      <section className="py-2 lg:py-2 bg-white relative overflow-hidden">
         <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
           {/* Flow Diagram */}
-          <div className="relative py-8">
+          <div className="relative py-2">
             <div className="grid grid-cols-[1fr_200px_1fr] gap-4">
               {/* Problems/Points - Left Side */}
               <div className="space-y-3">
-                <h3 className="text-sm text-gray-600 mb-4">{content.youAreHere.title}</h3>
+                <h3 className="text-lg text-black-900 font-semibold mb-4">{content.youAreHere.title}</h3>
                 {content.youAreHere.points.map((point, pIndex) => {
                   if (!point) return <div key={pIndex} className="h-2"></div>;
 
@@ -715,7 +715,7 @@ export default function Programmes() {
 
               {/* Goals - Right Side */}
               <div className="space-y-3">
-                <h3 className="text-sm text-gray-600 mb-4">{content.youWantToAchieve.title}</h3>
+                <h3 className="text-xl font-semibold  text-black-200 mb-4">{content.youWantToAchieve.title}</h3>
                 {content.youWantToAchieve.points.map((goal, gIndex) => {
                   // Define connection mapping (after filtering empty strings)
                   const connections: { [key: number]: number[] } = {
