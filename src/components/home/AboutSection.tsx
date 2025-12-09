@@ -31,12 +31,10 @@ export default function AboutSection() {
         {/* Team Image */}
         <div className="relative rounded-3xl overflow-hidden shadow-xl mb-8">
           <div className="w-full aspect-video bg-gray-200 relative">
-            <Image
+            <img
               src="/assets/team.jpeg"
               alt="Xperience Wave Team"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>

@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
 
 interface MediaItem {
   id: string;
@@ -75,13 +74,10 @@ export function CarouselGallery({ medias, className = '' }: CarouselGalleryProps
             className="absolute inset-0"
           >
             {medias[currentIndex]?.type === 'image' ? (
-              <Image
+              <img
                 src={medias[currentIndex].url}
                 alt={medias[currentIndex].alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority={currentIndex === 0}
+                className="w-full h-full object-cover"
                 loading={currentIndex === 0 ? 'eager' : 'lazy'}
               />
             ) : medias[currentIndex]?.type === 'video' ? (
@@ -140,12 +136,10 @@ export function CarouselGallery({ medias, className = '' }: CarouselGalleryProps
             aria-label={`Go to slide ${index + 1}`}
           >
             {media.type === 'image' ? (
-              <Image
+              <img
                 src={media.url}
                 alt={`Thumbnail ${index + 1}`}
-                fill
-                className="object-cover"
-                sizes="80px"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
             ) : (

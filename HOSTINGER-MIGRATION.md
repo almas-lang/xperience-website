@@ -1,4 +1,4 @@
-# 🚀 Hostinger WordPress → Vercel Next.js Migration Guide
+\# 🚀 Hostinger WordPress → Vercel Next.js Migration Guide
 
 ## Current Setup
 - **Hosting**: Hostinger WordPress

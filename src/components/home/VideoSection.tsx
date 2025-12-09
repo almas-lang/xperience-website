@@ -1,7 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-
 export default function VideoSection() {
   const handlePlayClick = () => {
     window.open('https://ld.xperiencewave.com', '_blank', 'noopener,noreferrer')
@@ -23,12 +21,10 @@ export default function VideoSection() {
         <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-8 cursor-pointer group" onClick={handlePlayClick}>
           <div className="aspect-video bg-gray-200 flex items-center justify-center relative">
             {/* Video Thumbnail */}
-            <Image
+            <img
               src="/assets/home_thumb.png"
               alt="Watch the breakdown video"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+              className="w-full h-full object-cover"
             />
             {/* Overlay on hover */}
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-200" />

@@ -83,12 +83,10 @@ export default function HeroSection() {
               {/* Large Left Image - Takes 4 columns */}
               <div className="col-span-4 row-span-2 animate-slideInLeft">
                 <div className="relative h-full min-h-[650px] rounded-3xl overflow-hidden bg-gray-100 group cursor-pointer shadow-xl hover:shadow-2xl transition-shadow duration-500">
-                  <Image
+                  <img
                     src="https://images.unsplash.com/photo-1752650736141-2e7c25e10583?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGRlc2lnbmVyJTIwbGFwdG9wJTIwaGVhZHBob25lc3xlbnwxfHx8fDE3NjQ0MDI5MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                     alt="Designer working on laptop"
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                    priority
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
                   {/* Rating Badge */}
                   <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-xl border border-slate-100 flex items-center gap-3 z-10 transform transition-all duration-500 hover:scale-105 hover:-translate-y-0.5 animate-fadeIn" style={{ animationDelay: '1s' }}>
@@ -147,11 +145,10 @@ export default function HeroSection() {
               {/* Top Right Image - Takes 2 columns */}
               <div className="col-span-2 animate-slideInLeft" style={{ animationDelay: '0.1s' }}>
                 <div className="relative h-[315px] rounded-3xl overflow-hidden bg-gray-100 group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                  <Image
+                  <img
                     src="https://images.unsplash.com/photo-1745847768382-816bfc32e1bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjB0ZWFtJTIwYnJhaW5zdG9ybWluZ3xlbnwxfHx8fDE3NjQ0MDI5MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Design team brainstorming"
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
                 </div>
               </div>
@@ -159,11 +156,10 @@ export default function HeroSection() {
               {/* Bottom Right Image - Takes 2 columns */}
               <div className="col-span-2 animate-slideInLeft" style={{ animationDelay: '0.2s' }}>
                 <div className="relative h-[315px] rounded-3xl overflow-hidden bg-gray-100 group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                  <Image
+                  <img
                     src="https://images.unsplash.com/photo-1739547320601-10807d9d256f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMGRlc2lnbmVyJTIwd29ya2luZ3xlbnwxfHx8fDE3NjQ0MDI5MDd8MA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Young designer working"
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
                 </div>
               </div>

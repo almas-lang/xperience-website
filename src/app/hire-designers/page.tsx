@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
-import Image from 'next/image'
 import { designers } from '@/data/designers'
 import HiringRequestModal from '@/components/HiringRequestModal'
 
@@ -98,11 +97,10 @@ export default function HireDesigners() {
                 {/* Designer Header */}
                 <div className="flex items-start gap-4 mb-4">
                   <div className="relative w-16 h-16 flex-shrink-0">
-                    <Image
+                    <img
                       src={designer.image}
                       alt={designer.name}
-                      fill
-                      className="object-cover rounded-full"
+                      className="w-16 h-16 object-cover rounded-full"
                     />
                   </div>
                   <div className="flex-1 min-w-0">

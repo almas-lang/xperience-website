@@ -160,11 +160,10 @@ export default function BlogPost() {
           {/* Featured Image */}
           {blog.image && (
             <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg mt-8">
-              <Image
+              <img
                 src={blog.image}
                 alt={blog.title}
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           )}
@@ -239,11 +238,10 @@ export default function BlogPost() {
                   className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-200"
                 >
                   <div className="relative h-[180px] overflow-hidden bg-gray-100">
-                    <Image
+                    <img
                       src={relatedBlog.image || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop'}
                       alt={relatedBlog.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
 

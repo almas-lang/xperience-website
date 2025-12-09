@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import Image from 'next/image'
 import { blogs, categories } from '@/data/blogs'
 
 type TabType = 'blogs' | 'design-tools'
@@ -88,11 +87,10 @@ export default function Resources() {
                 >
                   {/* Blog Image */}
                   <div className="w-full h-64 relative">
-                    <Image
+                    <img
                       src={blog.image || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop'}
                       alt={blog.title}
-                      fill
-                      className="object-cover"
+                      className="w-full h-full object-cover"
                     />
                     {/* Category Tag */}
                     <div className="absolute top-4 left-4">

@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function BlogsSection() {
   const blogs = [
     {
@@ -64,11 +62,10 @@ export default function BlogsSection() {
             >
               {/* Blog Image */}
               <div className="aspect-video relative">
-                <Image
+                <img
                   src={blog.image}
                   alt={blog.title}
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
 

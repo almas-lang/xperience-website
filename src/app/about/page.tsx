@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 import Link from "next/link";
 import { Quote, MessageCircle, Target, Globe, Zap } from "lucide-react";
 import { CarouselGallery } from "@/components/CarouselGallery";
@@ -443,11 +442,10 @@ export default function AboutUs() {
 
             {/* Image Placeholder */}
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
-              <Image
+              <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop"
                 alt="How we started"
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -535,7 +533,7 @@ export default function AboutUs() {
             {team.map((member, index) => (
               <div key={index} className="group">
                 <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg mb-6 bg-gray-800">
-                  <Image
+                  <img
                     src={
                       member.name === "Almas Tasneem"
                         ? "/assets/almas.jpg"
@@ -544,8 +542,7 @@ export default function AboutUs() {
                         : `https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop&${index}`
                     }
                     alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     style={
                       member.name === "Almas Tasneem"
                         ? { objectPosition: "center 5%" }
@@ -574,7 +571,7 @@ export default function AboutUs() {
               {advisoryTeam.map((advisor, index) => (
                 <div key={index} className="group">
                   <div className="relative h-[300px] rounded-2xl overflow-hidden shadow-lg mb-4 bg-gray-800">
-                    <Image
+                    <img
                       src={
                         advisor.name === "Fatima Sultana"
                           ? "/assets/fatima.jpeg"
@@ -585,8 +582,7 @@ export default function AboutUs() {
                           : `https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=600&fit=crop&${index}`
                       }
                       alt={advisor.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       style={
                         advisor.name === "Ankit"
                           ? { objectPosition: "center 30%" }
@@ -632,11 +628,10 @@ export default function AboutUs() {
 
             {/* World Map */}
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
-              <Image
+              <img
                 src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&h=600&fit=crop"
                 alt="Global presence - World Map showing India, Ireland, Dubai, and UK"
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
@@ -680,78 +675,71 @@ export default function AboutUs() {
           <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
               {/* Google */}
-              <div className="relative h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
-                <Image
+              <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
+                <img
                   src="/assets/partners/google.png"
                   alt="Google"
-                  fill
-                  className="object-contain p-2"
+                  className="h-full w-auto object-contain"
                   loading="lazy"
                 />
               </div>
 
               {/* Meta */}
-              <div className="relative h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
-                <Image
+              <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
+                <img
                   src="/assets/partners/Meta-Logo.png"
                   alt="Meta"
-                  fill
-                  className="object-contain p-2"
+                  className="h-full w-auto object-contain"
                   loading="lazy"
                 />
               </div>
 
               {/* LinkedIn */}
-              <div className="relative h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
-                <Image
+              <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
+                <img
                   src="/assets/partners/LinkedIn-Logo.png"
                   alt="LinkedIn"
-                  fill
-                  className="object-contain p-2"
+                  className="h-full w-auto object-contain"
                   loading="lazy"
                 />
               </div>
 
               {/* Figma */}
-              <div className="relative h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
-                <Image
+              <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
+                <img
                   src="/assets/partners/Figma-Logo.png"
                   alt="Figma"
-                  fill
-                  className="object-contain p-2"
+                  className="h-full w-auto object-contain"
                   loading="lazy"
                 />
               </div>
 
               {/* Naukri */}
-              <div className="relative h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
-                <Image
+              <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
+                <img
                   src="/assets/partners/naukri.png"
                   alt="Naukri"
-                  fill
-                  className="object-contain p-2"
+                  className="h-full w-auto object-contain"
                   loading="lazy"
                 />
               </div>
 
               {/* Nxuniq */}
-              <div className="relative h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
-                <Image
+              <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
+                <img
                   src="/assets/partners/nxuniq.webp"
                   alt="Nxuniq"
-                  fill
-                  className="object-contain p-2"
+                  className="h-full w-auto object-contain"
                   loading="lazy"
                 />
               </div>
 
               {/* Xscale */}
-              <div className="relative h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
-                <Image
+              <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
+                <img
                   src="/assets/partners/xscale"
                   alt="Xscale"
-                  fill
-                  className="object-contain p-2"
+                  className="h-full w-auto object-contain"
                   loading="lazy"
                 />
               </div>
