@@ -1,30 +1,9 @@
+import { blogs } from '@/data/blogs'
+import Link from 'next/link'
+
 export default function BlogsSection() {
-  const blogs = [
-    {
-      category: 'Career',
-      date: 'Nov 1, 2025',
-      title: 'Why \'more screens\' doesn\'t equal growth',
-      description: 'The myth of quantity over quality in design portfolios.',
-      link: '/resources/blog/more-screens-growth',
-      image: 'https://images.unsplash.com/photo-1512314889357-e157c22f938d?w=800&h=600&fit=crop',
-    },
-    {
-      category: 'Leadership',
-      date: 'Oct 28, 2025',
-      title: 'From execution to influence: The leadership gap',
-      description: 'What it really takes to move from doing to leading.',
-      link: '/resources/blog/execution-to-influence',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
-    },
-    {
-      category: 'Growth',
-      date: 'Oct 25, 2025',
-      title: 'Stop branding yourself. Start building expertise.',
-      description: 'Why personal branding advice is backwards for most designers.',
-      link: '/resources/blog/stop-branding-build-expertise',
-      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop',
-    },
-  ]
+  // Get the 3 most recent blogs
+  const recentBlogs = blogs.slice(0, 3)
 
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
@@ -55,17 +34,18 @@ export default function BlogsSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {blogs.map((blog, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
+          {recentBlogs.map((blog) => (
+            <Link
+              key={blog.id}
+              href={`/resources/blogs/${blog.id}`}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 block group"
             >
               {/* Blog Image */}
-              <div className="aspect-video relative">
+              <div className="aspect-video relative overflow-hidden">
                 <img
                   src={blog.image}
                   alt={blog.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
@@ -78,21 +58,18 @@ export default function BlogsSection() {
                   <span className="text-text-body text-sm">{blog.date}</span>
                 </div>
 
-                <h3 className="text-xl font-bold text-text-header mb-2 line-clamp-2">
+                <h3 className="text-xl font-bold text-text-header mb-2 line-clamp-2 group-hover:text-primary transition-colors duration-200">
                   {blog.title}
                 </h3>
 
                 <p className="text-text-body text-sm mb-4 line-clamp-2">
-                  {blog.description}
+                  {blog.excerpt}
                 </p>
 
-                <a
-                  href={blog.link}
-                  className="inline-flex items-center gap-2 text-primary hover:text-opacity-80 font-semibold transition-colors duration-200"
-                >
+                <div className="inline-flex items-center gap-2 text-primary font-semibold">
                   Read More
                   <svg
-                    className="w-4 h-4"
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -104,9 +81,9 @@ export default function BlogsSection() {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                </a>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

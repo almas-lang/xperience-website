@@ -31,7 +31,7 @@ export default function StatsSection() {
             {/* Metric 3 */}
             <div className="text-center">
               <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">
-                68%
+                94%
               </div>
               <div className="text-text-body text-sm">Achieved primary goal</div>
             </div>
