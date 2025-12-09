@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Waves, Zap, Wind, Sparkles, Users, Award, Lightbulb, Target, CheckCircle2, BookOpen, Rocket, TrendingUp } from 'lucide-react'
 
 type ProgrammeType = 'ripple' | 'current' | 'tide' | 'surge'
@@ -957,14 +956,11 @@ export default function Programmes() {
                   className="bg-white px-6 py-4 rounded-xl shadow-sm border border-gray-200 flex items-center justify-center"
                   style={{ minWidth: '120px', minHeight: '60px' }}
                 >
-                  <div className="relative w-28 h-10">
-                    <Image
-                      src={logoMap[tool] || ''}
-                      alt={tool}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                  <img
+                    src={logoMap[tool] || ''}
+                    alt={tool}
+                    className="h-10 w-auto object-contain"
+                  />
                 </div>
               );
             })}
