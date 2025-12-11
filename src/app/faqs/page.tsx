@@ -151,7 +151,7 @@ export default function FAQsPage() {
 
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8 hidden">
             <span className="text-6xl">❓</span>
           </div>
@@ -166,7 +166,7 @@ export default function FAQsPage() {
 
       {/* Category Tabs */}
       <section className="py-8 bg-white border-b border-gray-200 sticky top-20 z-40">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {faqCategories.map((category) => (
               <button
@@ -187,7 +187,7 @@ export default function FAQsPage() {
 
       {/* FAQs Content */}
       <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4">
             {faqs[activeCategory].map((faq, index) => {
               const key = `${activeCategory}-${index}`
@@ -234,7 +234,7 @@ export default function FAQsPage() {
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-primary to-accent">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Still have questions?
           </h2>

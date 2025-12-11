@@ -75,92 +75,73 @@ export default function HeroSection() {
         <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border border-orange-300/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
-      <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Side - Images Grid */}
+          {/* Left Side - Single Image */}
           <div className="relative order-2 lg:order-1 hidden lg:block">
-            <div className="grid grid-cols-6 gap-4 h-full">
-              {/* Large Left Image - Takes 4 columns */}
-              <div className="col-span-4 row-span-2 animate-slideInLeft">
-                <div className="relative h-full min-h-[650px] rounded-3xl overflow-hidden bg-gray-100 group cursor-pointer shadow-xl hover:shadow-2xl transition-shadow duration-500">
-                  <img
-                    src="https://images.unsplash.com/photo-1752650736141-2e7c25e10583?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGRlc2lnbmVyJTIwbGFwdG9wJTIwaGVhZHBob25lc3xlbnwxfHx8fDE3NjQ0MDI5MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                    alt="Designer working on laptop"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  />
-                  {/* Rating Badge */}
-                  <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-xl border border-slate-100 flex items-center gap-3 z-10 transform transition-all duration-500 hover:scale-105 hover:-translate-y-0.5 animate-fadeIn" style={{ animationDelay: '1s' }}>
-                    {/* Avatars */}
-                    <div className="flex -space-x-2">
-                      <Image
-                        src="https://i.pravatar.cc/150?img=1"
-                        alt="User 1"
-                        width={32}
-                        height={32}
-                        className="w-8 h-8 rounded-full border-2 border-white object-cover"
-                      />
-                      <Image
-                        src="https://i.pravatar.cc/150?img=5"
-                        alt="User 2"
-                        width={32}
-                        height={32}
-                        className="w-8 h-8 rounded-full border-2 border-white object-cover"
-                      />
-                      <Image
-                        src="https://i.pravatar.cc/150?img=9"
-                        alt="User 3"
-                        width={32}
-                        height={32}
-                        className="w-8 h-8 rounded-full border-2 border-white object-cover"
-                      />
-                      <Image
-                        src="https://i.pravatar.cc/150?img=12"
-                        alt="User 4"
-                        width={32}
-                        height={32}
-                        className="w-8 h-8 rounded-full border-2 border-white object-cover"
-                      />
-                    </div>
+            <div className="animate-slideInLeft">
+              <div className="relative h-full min-h-[650px] rounded-3xl overflow-hidden bg-gray-100 group cursor-pointer shadow-xl hover:shadow-2xl transition-shadow duration-500">
+                <Image
+                  src="/assets/hero.png"
+                  alt="Designer working on laptop"
+                  fill
+                  priority
+                  quality={85}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-[75%_center] transition-transform duration-700 ease-out group-hover:scale-105"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjY1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjY1MCIgZmlsbD0iI2YzZjRmNiIvPjwvc3ZnPg=="
+                />
+                {/* Rating Badge */}
+                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-xl border border-slate-100 flex items-center gap-3 z-10 transform transition-all duration-500 hover:scale-105 hover:-translate-y-0.5 animate-fadeIn" style={{ animationDelay: '1s' }}>
+                  {/* Avatars */}
+                  <div className="flex -space-x-2">
+                    <Image
+                      src="/assets/VK.jpeg"
+                      alt="Designer VK"
+                      width={32}
+                      height={32}
+                      className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                    />
+                    <Image
+                      src="/assets/pratika.jpeg"
+                      alt="Designer Pratika"
+                      width={32}
+                      height={32}
+                      className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                    />
+                    <Image
+                      src="/assets/anzar.png"
+                      alt="Designer Anzar"
+                      width={32}
+                      height={32}
+                      className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                    />
+                    <Image
+                      src="/assets/aswin.png"
+                      alt="Designer Aswin"
+                      width={32}
+                      height={32}
+                      className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                    />
+                  </div>
 
-                    {/* Rating Section */}
-                    <div className="flex items-center gap-2 border-l border-slate-200 pl-3">
-                      {/* Stars */}
-                      <div className="flex gap-0.5">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <svg key={star} className="w-4 h-4 fill-amber-400" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                          </svg>
-                        ))}
-                      </div>
-                      {/* Rating Text */}
-                      <div className="flex flex-col">
-                        <span className="text-lg font-bold text-slate-900 leading-none">4.9</span>
-                        <span className="text-xs text-slate-500">Rating</span>
-                      </div>
+                  {/* Rating Section */}
+                  <div className="flex items-center gap-2 border-l border-slate-200 pl-3">
+                    {/* Stars */}
+                    <div className="flex gap-0.5">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} className="w-4 h-4 fill-amber-400" viewBox="0 0 20 20">
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                        </svg>
+                      ))}
+                    </div>
+                    {/* Rating Text */}
+                    <div className="flex flex-col">
+                      <span className="text-lg font-bold text-slate-900 leading-none">4.9</span>
+                      <span className="text-xs text-slate-500">Rating</span>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Top Right Image - Takes 2 columns */}
-              <div className="col-span-2 animate-slideInLeft" style={{ animationDelay: '0.1s' }}>
-                <div className="relative h-[315px] rounded-3xl overflow-hidden bg-gray-100 group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                  <img
-                    src="https://images.unsplash.com/photo-1745847768382-816bfc32e1bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjB0ZWFtJTIwYnJhaW5zdG9ybWluZ3xlbnwxfHx8fDE3NjQ0MDI5MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Design team brainstorming"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  />
-                </div>
-              </div>
-
-              {/* Bottom Right Image - Takes 2 columns */}
-              <div className="col-span-2 animate-slideInLeft" style={{ animationDelay: '0.2s' }}>
-                <div className="relative h-[315px] rounded-3xl overflow-hidden bg-gray-100 group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                  <img
-                    src="https://images.unsplash.com/photo-1739547320601-10807d9d256f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMGRlc2lnbmVyJTIwd29ya2luZ3xlbnwxfHx8fDE3NjQ0MDI5MDd8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Young designer working"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  />
                 </div>
               </div>
             </div>

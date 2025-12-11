@@ -10,7 +10,7 @@ export default function AIAgents() {
 
       {/* AI Agents Coming Soon */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Coming Soon Banner */}
           <div className="bg-text-header text-white rounded-2xl p-12 text-center">
             <div className="text-5xl mb-6">🚀</div>

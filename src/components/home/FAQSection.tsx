@@ -31,7 +31,7 @@ export default function FAQSection() {
 
   return (
     <section className="py-16 lg:py-24 bg-white relative">
-      <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Decorative Question Mark */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block pointer-events-none">
           <Image

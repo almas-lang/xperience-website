@@ -70,7 +70,7 @@ export default function BrokenSection() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] bg-gradient-to-b from-primary/20 to-transparent rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-12">
             What's really broken...

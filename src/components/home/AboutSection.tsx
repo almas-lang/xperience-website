@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function AboutSection() {
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
-      <div className="max-w-[1100px] mx-auto px-2 sm:px-4 lg:px-6">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6 mb-8">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">

@@ -7,7 +7,7 @@ export default function VideoSection() {
 
   return (
     <section className="py-16 lg:py-24 bg-white">
-      <div className="max-w-[1100px] mx-auto px-2 sm:px-4 lg:px-6">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <span className="text-primary">Watch the breakdown in this 30 min video</span>
@@ -18,7 +18,18 @@ export default function VideoSection() {
         </div>
 
         {/* Video Container */}
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-8 cursor-pointer group" onClick={handlePlayClick}>
+        <div
+          className="relative rounded-3xl overflow-hidden shadow-2xl mb-8 cursor-pointer group"
+          onClick={handlePlayClick}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault()
+              handlePlayClick()
+            }
+          }}
+        >
           <div className="aspect-video bg-gray-200 relative">
             {/* Video Thumbnail */}
             <img
@@ -28,11 +39,10 @@ export default function VideoSection() {
             />
             {/* Overlay on hover */}
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-200" />
-            {/* Play Button */}
-            <button
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200"
-              onClick={handlePlayClick}
-              aria-label="Play video"
+            {/* Play Button - Non-interactive, just visual */}
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200 pointer-events-none"
+              aria-hidden="true"
             >
               <svg
                 className="w-6 h-6 sm:w-8 sm:h-8 text-primary ml-1"
@@ -41,7 +51,7 @@ export default function VideoSection() {
               >
                 <path d="M8 5v14l11-7z" />
               </svg>
-            </button>
+            </div>
           </div>
         </div>
 

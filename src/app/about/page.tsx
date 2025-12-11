@@ -12,22 +12,87 @@ export default function AboutUs() {
 
   // Media arrays for carousels
   const waveMedias = [
-    { id: '1', type: 'image' as const, url: '/assets/wmc/IMG_0405.JPG', alt: 'Wave Makers Connect Event' },
-    { id: '2', type: 'image' as const, url: '/assets/wmc/IMG_0416.JPG', alt: 'Wave Makers Connect Event' },
-    { id: '3', type: 'image' as const, url: '/assets/wmc/IMG_0425.JPG', alt: 'Wave Makers Connect Event' },
-    { id: '4', type: 'image' as const, url: '/assets/wmc/IMG_0428.JPG', alt: 'Wave Makers Connect Event' },
-    { id: '5', type: 'image' as const, url: '/assets/wmc/DSC00334.jpg', alt: 'Wave Makers Connect Event' },
-    { id: '6', type: 'image' as const, url: '/assets/wmc/DSC00482.jpg', alt: 'Wave Makers Connect Event' },
-    { id: '7', type: 'image' as const, url: '/assets/wmc/DSC00606.jpg', alt: 'Wave Makers Connect Event' },
-    { id: '8', type: 'image' as const, url: '/assets/wmc/DSC00640.jpg', alt: 'Wave Makers Connect Event' },
-    { id: '9', type: 'image' as const, url: '/assets/wmc/IMG_7180.JPG', alt: 'Wave Makers Connect Event' },
-    { id: '10', type: 'image' as const, url: '/assets/wmc/IMG_7190.jpg', alt: 'Wave Makers Connect Event' },
-    { id: '11', type: 'image' as const, url: '/assets/wmc/IMG_7209.jpg', alt: 'Wave Makers Connect Event' },
-    { id: '12', type: 'image' as const, url: '/assets/wmc/IMG_7304.JPG', alt: 'Wave Makers Connect Event' },
+    {
+      id: "1",
+      type: "image" as const,
+      url: "/assets/IMG_0405.JPG",
+      alt: "Wave Makers Connect Event",
+    },
+    {
+      id: "2",
+      type: "image" as const,
+      url: "/assets/IMG_0416.JPG",
+      alt: "Wave Makers Connect Event",
+    },
+    {
+      id: "3",
+      type: "image" as const,
+      url: "/assets/IMG_0425.JPG",
+      alt: "Wave Makers Connect Event",
+    },
+    {
+      id: "4",
+      type: "image" as const,
+      url: "/assets/IMG_0428.JPG",
+      alt: "Wave Makers Connect Event",
+    },
+    {
+      id: "5",
+      type: "image" as const,
+      url: "/assets/DSC00334.jpg",
+      alt: "Wave Makers Connect Event",
+    },
+    {
+      id: "6",
+      type: "image" as const,
+      url: "/assets/DSC00482.jpg",
+      alt: "Wave Makers Connect Event",
+    },
+    {
+      id: "7",
+      type: "image" as const,
+      url: "/assets/DSC00606.jpg",
+      alt: "Wave Makers Connect Event",
+    },
+    {
+      id: "8",
+      type: "image" as const,
+      url: "/assets/DSC00640.jpg",
+      alt: "Wave Makers Connect Event",
+    },
+    {
+      id: "9",
+      type: "image" as const,
+      url: "/assets/IMG_7180.JPG",
+      alt: "Wave Makers Connect Event",
+    },
+    {
+      id: "10",
+      type: "image" as const,
+      url: "/assets/IMG_7190.jpg",
+      alt: "Wave Makers Connect Event",
+    },
+    {
+      id: "11",
+      type: "image" as const,
+      url: "/assets/IMG_7209.jpg",
+      alt: "Wave Makers Connect Event",
+    },
+    {
+      id: "12",
+      type: "image" as const,
+      url: "/assets/IMG_7304.JPG",
+      alt: "Wave Makers Connect Event",
+    },
   ];
 
   const podcastMedias = [
-    { id: '1', type: 'image' as const, url: '/assets/vivid-yellow-podcast.jpeg', alt: 'Vivid Yellow Podcast' },
+    {
+      id: "1",
+      type: "image" as const,
+      url: "/assets/vivid-yellow-podcast.jpeg",
+      alt: "Vivid Yellow Podcast",
+    },
   ];
 
   const problemStatement = {
@@ -53,10 +118,10 @@ export default function AboutUs() {
   const howWeStarted = {
     title: "How we started",
     description:
-      "We began with design. Because design is where purpose meets craft - and where meaning sits in solutions too.",
+      "We began with design. Because design is where purpose meets craft - and where learning can transform lives.",
     points: [
-      "If you're an excellent student then focus — congrats/thanks. You're already graduating into guiding systems. Stop chasing business enterprise.",
-      "If you're an excellent mentor Experience tells us — congrats/thanks. You know what people need. That's rare as hell.",
+      "Two years in, we've achieved a 95% success rate on goals. Our designers aren't just building pretty screens; they're driving business outcomes.",
+      "If you've stumbled across Xperience Wave — congratulations. You're already thinking ahead. That's all we ask for...",
     ],
   };
 
@@ -127,7 +192,7 @@ export default function AboutUs() {
           <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-gradient-radial from-red-100/30 via-orange-50/15 to-transparent blur-3xl"></div>
         </div>
 
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-8">
               <span className="text-text-header">Transforming how </span>
@@ -157,7 +222,7 @@ export default function AboutUs() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-gradient-to-b from-[#F24646]/20 to-transparent rounded-full blur-3xl" />
           </div>
 
-          <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
+          <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Side - Title */}
               <div>
@@ -169,7 +234,11 @@ export default function AboutUs() {
                 </h2>
                 <div className="h-1 w-32 bg-primary rounded-full"></div>
                 <p className="text-gray-300 text-md mt-6 leading-relaxed">
-                 Years of research have gone into how adults learn.<br/>Beautiful theories.<br/> Thoughtful frameworks. <br/>Endless talks on what education should look like.
+                  Years of research have gone into how adults learn.
+                  <br />
+                  Beautiful theories.
+                  <br /> Thoughtful frameworks. <br />
+                  Endless talks on what education should look like.
                   <br />
                   Yet everything feels broken in the corporate
                 </p>
@@ -204,7 +273,7 @@ export default function AboutUs() {
 
         {/* Two-Column Comparison */}
         <div className="py-16 lg:py-24 relative bg-white">
-          <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Company Side */}
               <div className="relative">
@@ -309,7 +378,7 @@ export default function AboutUs() {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-gradient-to-t from-primary/20 to-transparent rounded-full blur-3xl" />
           </div>
 
-          <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6 relative z-10 text-center">
+          <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               It's Not Too Early.
             </h2>
@@ -324,7 +393,7 @@ export default function AboutUs() {
 
           {/* Stats Section */}
           {/* <div className="py-16 lg:py-24 relative border-t border-gray-800"> */}
-          <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
+          <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="h-1 w-32 bg-primary rounded-full mx-auto my-8"></div>
 
             <p className="text-center text-xl sm:text-2xl text-white mb-4 leading-relaxed">
@@ -418,7 +487,7 @@ export default function AboutUs() {
 
       {/* How We Started Section */}
       <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div>
@@ -435,15 +504,12 @@ export default function AboutUs() {
                   </p>
                 ))}
               </div>
-              <p className="text-text-body mt-6 italic">
-                Thank us on set for...
-              </p>
             </div>
 
             {/* Image Placeholder */}
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop"
+                src="/assets/starting.png"
                 alt="How we started"
                 className="w-full h-full object-cover"
               />
@@ -470,7 +536,7 @@ export default function AboutUs() {
           />
         </div>
 
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-header mb-12 text-center">
             Our values
           </h2>
@@ -507,7 +573,7 @@ export default function AboutUs() {
                   <h3 className="text-2xl font-bold text-text-header mb-4">
                     {value.title}
                   </h3>
-                  <p className="text-text-body leading-relaxed text-lg">
+                  <p className="text-text-body leading-relaxed text-md">
                     {value.description}
                   </p>
                 </div>
@@ -524,7 +590,7 @@ export default function AboutUs() {
           <div className="absolute bottom-0 right-0 w-[1000px] h-[1000px] bg-gradient-to-t from-[#7677EA]/20 to-transparent rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12">
             Leadership
           </h2>
@@ -600,7 +666,7 @@ export default function AboutUs() {
             </div>
           </div>
           {/* <section className="py-16 lg:py-24">
-            <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6 text-left">
+            <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 text-left">
               <p className="text-xl sm:text-2xl text-gray-300 leading-relaxed mb-8">
                 Every career has different nuances, different expertise, and
                 business ethos - all obsessed with doing education differently.
@@ -612,7 +678,7 @@ export default function AboutUs() {
 
       {/* Global Presence Section */}
       <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div>
@@ -647,7 +713,7 @@ export default function AboutUs() {
           <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
             Join the Mission
           </h2>
@@ -672,12 +738,12 @@ export default function AboutUs() {
           <h3 className="text-2xl font-bold text-text-header mb-6">
             Our partners in the Journey
           </h3>
-          <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
               {/* Google */}
               <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
                 <img
-                  src="/assets/partners/google.png"
+                  src="/assets/google.png"
                   alt="Google"
                   className="h-full w-auto object-contain"
                   loading="lazy"
@@ -687,7 +753,7 @@ export default function AboutUs() {
               {/* Meta */}
               <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
                 <img
-                  src="/assets/partners/Meta-Logo.png"
+                  src="/assets/Meta-Logo.png"
                   alt="Meta"
                   className="h-full w-auto object-contain"
                   loading="lazy"
@@ -697,7 +763,7 @@ export default function AboutUs() {
               {/* LinkedIn */}
               <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
                 <img
-                  src="/assets/partners/LinkedIn-Logo.png"
+                  src="/assets/LinkedIn-Logo.png"
                   alt="LinkedIn"
                   className="h-full w-auto object-contain"
                   loading="lazy"
@@ -707,7 +773,7 @@ export default function AboutUs() {
               {/* Figma */}
               <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
                 <img
-                  src="/assets/partners/Figma-Logo.png"
+                  src="/assets/Figma-Logo.png"
                   alt="Figma"
                   className="h-full w-auto object-contain"
                   loading="lazy"
@@ -717,7 +783,7 @@ export default function AboutUs() {
               {/* Naukri */}
               <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
                 <img
-                  src="/assets/partners/naukri.png"
+                  src="/assets/naukri.png"
                   alt="Naukri"
                   className="h-full w-auto object-contain"
                   loading="lazy"
@@ -727,7 +793,7 @@ export default function AboutUs() {
               {/* Nxuniq */}
               <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
                 <img
-                  src="/assets/partners/nxuniq.webp"
+                  src="/assets/nxuniq.webp"
                   alt="Nxuniq"
                   className="h-full w-auto object-contain"
                   loading="lazy"
@@ -737,7 +803,7 @@ export default function AboutUs() {
               {/* Xscale */}
               <div className="h-16 w-32 bg-white rounded-lg p-3 flex items-center justify-center">
                 <img
-                  src="/assets/partners/xscale"
+                  src="/assets/xscale"
                   alt="Xscale"
                   className="h-full w-auto object-contain"
                   loading="lazy"
@@ -750,7 +816,7 @@ export default function AboutUs() {
 
       {/* Contact Section */}
       <section className="py-16 lg:pb-8 bg-gray-50">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Office */}
           <div className="bg-white rounded-2xl p-8 shadow-sm mb-8">
             <h3 className="text-2xl font-bold text-text-header mb-6">
@@ -767,9 +833,7 @@ export default function AboutUs() {
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-text-header mb-2">
-                  Email:
-                </h4>
+                <h4 className="font-semibold text-text-header mb-2">Email:</h4>
                 <a
                   href="mailto:hello@xperiencewave.com"
                   className="text-primary hover:text-opacity-80"
@@ -778,9 +842,7 @@ export default function AboutUs() {
                 </a>
               </div>
               <div>
-                <h4 className="font-semibold text-text-header mb-2">
-                  Phone:
-                </h4>
+                <h4 className="font-semibold text-text-header mb-2">Phone:</h4>
                 <a
                   href="tel:08041325804"
                   className="text-primary hover:text-opacity-80"
@@ -792,35 +854,49 @@ export default function AboutUs() {
           </div>
 
           {/* Wave Makers Connect */}
-          <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-200">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-sm border border-gray-200">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               {/* Content */}
-              <div>
-                <h3 className="text-2xl font-bold text-text-header mb-6">
+              <div className="space-y-6">
+                <h3 className="text-3xl lg:text-4xl font-bold text-text-header mb-6">
                   Wave Makers Connect
                 </h3>
-                <p className="text-text-body mb-4 leading-relaxed">
+                <p className="text-text-body text-md leading-relaxed">
                   Welcome to WMC - our offline event series that brings together
                   the next generation of leaders in Design, Engineering, and
                   Entrepreneurship.
                 </p>
-                <p className="text-text-body mb-4 leading-relaxed">
+                <p className="text-text-body text-md leading-relaxed">
                   Every quarter, over 100 members gather for meaningful
-                  discussions, speaker sessions, and genuine connections.
+                  discussions, speaker sessions, and genuine connections. This isn't
+                  just another networking event - it's a movement of professionals
+                  who want to build something real.
                 </p>
+                <div className="bg-gray-50 rounded-xl p-6 border-l-4 border-primary">
+                  <p className="text-text-body leading-relaxed">
+                    <span className="font-semibold text-text-header">No loud music. No hype.</span>
+                    <br />
+                    Just honest conversations over coffee and sandwiches. People
+                    walk in curious - and walk out with new business partners, job
+                    offers, or friends who think just like them.
+                  </p>
+                </div>
                 <p className="text-text-body leading-relaxed">
-                  No loud music. No hype.
-                  <br />
-                  Just honest conversations over coffee and sandwiches. People walk in curious - and walk out with new
-                  business partners, job offers, or friends who think just like
-                  them.
-                  <br />
-                  It's one of a kind.
+                  From intimate panel discussions with industry leaders to hands-on workshops
+                  and collaborative design thinking sessions, WMC creates spaces where ideas
+                  transform into opportunities. Whether you're looking to pivot your career,
+                  find your next co-founder, or simply connect with like-minded professionals,
+                  WMC is where it happens.
+                </p>
+                <p className="text-text-body font-medium text-primary">
+                  It's one of a kind. And it's growing every quarter.
                 </p>
               </div>
 
               {/* Carousel Gallery */}
-              <CarouselGallery medias={waveMedias} className="h-[300px]" />
+              <div className="lg:sticky lg:top-8 relative z-10">
+                <CarouselGallery medias={waveMedias} className="h-[400px] lg:h-[500px]" />
+              </div>
             </div>
           </div>
         </div>
@@ -828,7 +904,7 @@ export default function AboutUs() {
 
       {/* Yellow Podcast Section */}
       <section className="py-2 bg-gray-50">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-200">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* Content */}
@@ -837,12 +913,13 @@ export default function AboutUs() {
                   Vivid Yellow Podcast
                 </h3>
                 <p className="text-text-body mb-4 leading-relaxed">
-                  Every once in a while, we meet people whose minds stop us in our
-                  tracks.
+                  Every once in a while, we meet people whose minds stop us in
+                  our tracks.
                 </p>
                 <p className="text-text-body mb-4 leading-relaxed">
-                  People who've done extraordinary things - the kind that redefine
-                  their fields. We couldn't keep those stories to ourselves.
+                  People who've done extraordinary things - the kind that
+                  redefine their fields. We couldn't keep those stories to
+                  ourselves.
                   <br />
                   So we built Vivid Yellow - our in-house podcast.
                 </p>
@@ -853,7 +930,8 @@ export default function AboutUs() {
                 <p className="text-text-body mb-4 leading-relaxed">
                   No scripts. No fluff. Just raw, valuable conversations.
                   <br />
-                  Listen to our latest talk with Amit Tiwari on YouTube and iTunes. →
+                  Listen to our latest talk with Amit Tiwari on YouTube and
+                  iTunes. →
                 </p>
               </div>
 
@@ -866,15 +944,14 @@ export default function AboutUs() {
 
       {/* Journey Continues Section */}
       <section className="py-16 lg:py-24 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-header mb-6">
             The Journey Continues
           </h2>
           <p className="text-lg text-text-body leading-relaxed">
-            What's next getting excited about: AI, and yes, seriously
-            considering how do we educate to about budding a movement - one that
-            puts education back where it belongs: in the hands of people who
-            care.
+            We’re just getting started.Because this isn’t about building another
+            training company.It’s about building a movement - one that puts
+            education back where it belongs: in the hands of people who care.
           </p>
         </div>
       </section>

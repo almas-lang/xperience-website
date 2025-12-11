@@ -15,7 +15,7 @@ export default function HireDesigners() {
 
       {/* Hero Section */}
       <section className="py-12 lg:pt-12 lg:pb-0 bg-white">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-lg sm:text-xl text-text-body max-w-3xl mx-auto leading-relaxed mb-8">
             Access our network of trained, vetted designers ready to drive impact in your organization.
           </p>
@@ -30,7 +30,7 @@ export default function HireDesigners() {
 
       {/* Why Hire From Xperience Wave */}
       <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-pink-50 via-white to-purple-50 rounded-3xl border border-gray-200 p-8 lg:p-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-header text-center mb-16">
               Why Hire From Xperience Wave?
@@ -82,7 +82,7 @@ export default function HireDesigners() {
 
       {/* Available Designers */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-header mb-12">
             Available Designers
           </h2>
@@ -188,7 +188,7 @@ export default function HireDesigners() {
 
       {/* Can't Find the Right Fit */}
       <section className="py-16 bg-white">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-text-header rounded-3xl p-12 lg:p-16 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               Can't Find the Right Fit?

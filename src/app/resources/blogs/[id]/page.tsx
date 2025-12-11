@@ -17,7 +17,7 @@ export default function BlogPost() {
       <main className="min-h-screen bg-white">
         <Navigation />
         <section className="py-16 lg:py-24">
-          <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 text-center">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl font-bold text-text-header mb-6">
               Blog Not Found
             </h1>
@@ -110,7 +110,7 @@ export default function BlogPost() {
 
       {/* Hero Section */}
       <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white border-b border-gray-100">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <div className="mb-6">
             <Link
@@ -172,7 +172,7 @@ export default function BlogPost() {
 
       {/* Blog Content with Sidebar */}
       <article className="py-12 lg:py-16 bg-white">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2">
@@ -201,7 +201,7 @@ export default function BlogPost() {
 
       {/* Author Section */}
       <section className="py-12 bg-gray-50 border-t border-gray-100">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
             <div className="flex items-start gap-6">
               <div className="flex-shrink-0">
@@ -225,7 +225,7 @@ export default function BlogPost() {
       {/* Related Blogs */}
       {relatedBlogs.length > 0 && (
         <section className="py-16 bg-white border-t border-gray-100">
-          <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-text-header mb-8">
               More in {blog.category}
             </h2>
@@ -271,7 +271,7 @@ export default function BlogPost() {
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-primary to-accent text-white">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Want Personalized Guidance?
           </h2>

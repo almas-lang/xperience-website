@@ -9,7 +9,7 @@ export default function DesignerTypesBanner() {
 
   return (
     <section className="bg-primary py-12">
-      <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
         <h3 className="text-white text-center text-xl sm:text-2xl font-medium mb-8">
           Not everyone's ready for this, but if you are - we'll take you all the way.
         </h3>

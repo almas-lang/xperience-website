@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { openPositions } from '@/data/careers'
@@ -12,7 +11,7 @@ export default function Careers() {
 
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-header mb-6">
             Join the Wave
           </h1>
@@ -24,7 +23,7 @@ export default function Careers() {
 
       {/* Why Xperience Wave */}
       <section className="py-16 bg-white">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-header text-center mb-12">
             Why Xperience Wave?
           </h2>
@@ -87,7 +86,7 @@ export default function Careers() {
 
       {/* Our Values */}
       <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-header mb-12">
             Our values
           </h2>
@@ -130,7 +129,7 @@ export default function Careers() {
 
       {/* Open Positions */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-header mb-12">
             Open Positions
           </h2>
@@ -202,7 +201,7 @@ export default function Careers() {
 
       {/* Don't See a Perfect Fit */}
       <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-text-header rounded-3xl p-12 lg:p-16 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               Don't See a Perfect Fit?

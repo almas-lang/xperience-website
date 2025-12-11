@@ -12,7 +12,7 @@ export default function Products() {
       <Navigation />
       
       <section className="py-20">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl font-bold text-text-header mb-6">
             Products
           </h1>

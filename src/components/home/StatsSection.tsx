@@ -1,7 +1,7 @@
 export default function StatsSection() {
   return (
     <section className="py-12 bg-gray-50">
-      <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Stats Row */}
         <div className="bg-white rounded-2xl p-8 shadow-sm">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 items-center">
@@ -42,8 +42,8 @@ export default function StatsSection() {
         <div className="mt-12">
           <div className="w-full aspect-video bg-gray-200 rounded-3xl overflow-hidden shadow-lg">
             <video
-              src="/assets/reviews/Pavi_Suji.mp4"
-              poster="/assets/reviews/pavitra.png"
+              src="/assets/Pavi_Suji.mp4"
+              poster="/assets/pavitra.png"
               className="w-full h-full object-cover"
               controls
               playsInline

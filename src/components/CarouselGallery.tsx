@@ -100,18 +100,28 @@ export function CarouselGallery({ medias, className = '' }: CarouselGalleryProps
         {medias.length > 1 && (
           <>
             <button
-              onClick={() => navigate(-1)}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all z-10 group"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                navigate(-1);
+              }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all z-20 group pointer-events-auto"
               aria-label="Previous slide"
+              type="button"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-800 group-hover:text-primary transition-colors" />
+              <ChevronLeft className="w-6 h-6 text-gray-800 group-hover:text-primary transition-colors pointer-events-none" />
             </button>
             <button
-              onClick={() => navigate(1)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all z-10 group"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                navigate(1);
+              }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all z-20 group pointer-events-auto"
               aria-label="Next slide"
+              type="button"
             >
-              <ChevronRight className="w-6 h-6 text-gray-800 group-hover:text-primary transition-colors" />
+              <ChevronRight className="w-6 h-6 text-gray-800 group-hover:text-primary transition-colors pointer-events-none" />
             </button>
           </>
         )}
@@ -127,13 +137,18 @@ export function CarouselGallery({ medias, className = '' }: CarouselGalleryProps
         {medias.map((media, index) => (
           <button
             key={media.id}
-            onClick={() => jumpToSlide(index)}
-            className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              jumpToSlide(index);
+            }}
+            className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
               index === currentIndex
                 ? 'border-primary scale-105 shadow-md'
                 : 'border-transparent opacity-60 hover:opacity-100 hover:border-gray-300'
             }`}
             aria-label={`Go to slide ${index + 1}`}
+            type="button"
           >
             {media.type === 'image' ? (
               <img

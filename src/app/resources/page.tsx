@@ -27,7 +27,7 @@ export default function Resources() {
 
       {/* Tab Navigation */}
       <section className="py-8 bg-white border-b border-gray-200">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-4 justify-center">
             {tabs.map((tab) => (
               <button
@@ -50,7 +50,7 @@ export default function Resources() {
       {/* Blog Posts Grid */}
       {activeTab === 'blogs' && (
         <section className="py-16 bg-gray-50">
-          <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
             {/* Category Filter */}
             <div className="flex flex-wrap gap-3 justify-center mb-12">
               <button
@@ -134,7 +134,7 @@ export default function Resources() {
       {/* Design Tools Tab Content */}
       {activeTab === 'design-tools' && (
         <section className="py-16 bg-gray-50">
-          <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-center text-text-body text-lg mb-12">
               Practical frameworks and calculators to elevate your design practice.
             </p>
@@ -224,7 +224,7 @@ export default function Resources() {
 
       {/* CTA Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-text-header mb-4">
             Want More Than Just Resources?
           </h2>

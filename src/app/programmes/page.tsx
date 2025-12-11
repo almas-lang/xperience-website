@@ -4,9 +4,91 @@ import { useState, useEffect } from 'react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { Waves, Zap, Wind, Sparkles, Users, Award, Lightbulb, Target, CheckCircle2, BookOpen, Rocket, TrendingUp } from 'lucide-react'
+import { Waves, Zap, Wind, Sparkles, Users, Award, Lightbulb, Target, CheckCircle2, BookOpen, Rocket, TrendingUp, ChevronRight } from 'lucide-react'
 
 type ProgrammeType = 'ripple' | 'current' | 'tide' | 'surge'
+
+// Flow Diagram Accordion Component for Mobile
+function FlowDiagramAccordion({ content, activeTab }: { content: any; activeTab: ProgrammeType }) {
+  const [expanded, setExpanded] = useState<number | null>(0)
+
+  // Reset to first accordion when tab changes
+  useEffect(() => {
+    setExpanded(0)
+  }, [activeTab])
+
+  // Create mapped data from content
+  const mappedData = content.youAreHere.points
+    .filter((p: string) => p)
+    .map((problem: string, index: number) => {
+      // Define connection mapping (same as desktop)
+      const connections: { [key: number]: number[] } = {
+        0: [2, 3],
+        1: [2, 4],
+        2: [1, 4],
+        3: [0, 1],
+        4: [0, 3],
+        5: [0, 3],
+        6: [3, 4],
+      }
+
+      const solutionIndices = connections[index] || []
+      const solutions = solutionIndices.map(idx => content.youWantToAchieve.points[idx])
+
+      return { problem, solutions }
+    })
+
+  // Problem card colors (always red like desktop)
+  const problemBgColor = 'bg-red-50'
+  const problemHoverBgColor = 'hover:bg-red-100'
+  const problemBorderColor = 'border-red-200'
+
+  // Solution colors based on active tab (like desktop)
+  const solutionBgColor = activeTab === 'ripple' ? 'bg-blue-50' :
+                        activeTab === 'current' ? 'bg-purple-50' :
+                        activeTab === 'tide' ? 'bg-pink-50' : 'bg-orange-50'
+
+  const solutionCardBgColor = activeTab === 'ripple' ? 'bg-blue-100' :
+                            activeTab === 'current' ? 'bg-purple-100' :
+                            activeTab === 'tide' ? 'bg-pink-100' : 'bg-orange-100'
+
+  const solutionBorderColor = activeTab === 'ripple' ? 'border-blue-200' :
+                            activeTab === 'current' ? 'border-purple-200' :
+                            activeTab === 'tide' ? 'border-pink-200' : 'border-orange-200'
+
+  return (
+    <div className="space-y-2">
+      <h3 className="text-gray-600 mb-3 font-semibold">{content.youAreHere.title}</h3>
+      {mappedData.map((item: any, index: number) => (
+        <div key={index} className={`border-2 ${problemBorderColor} rounded-lg overflow-hidden`}>
+          <button
+            onClick={() => setExpanded(expanded === index ? null : index)}
+            className={`w-full ${problemBgColor} p-3 flex items-start justify-between gap-2 ${problemHoverBgColor} transition-colors`}
+          >
+            <p className="text-gray-800 text-left flex-1 text-sm">{item.problem}</p>
+            <ChevronRight
+              className={`w-4 h-4 text-gray-600 flex-shrink-0 transition-transform ${
+                expanded === index ? 'rotate-90' : ''
+              }`}
+            />
+          </button>
+          {expanded === index && (
+            <div className={`${solutionBgColor} p-3 border-t-2 ${solutionBorderColor}`}>
+              <p className="text-gray-600 mb-2 text-xs font-medium">And you want to achieve:</p>
+              <div className="space-y-2">
+                {item.solutions.map((solution: string, sIndex: number) => (
+                  <div key={sIndex} className={`${solutionCardBgColor} rounded px-3 py-2`}>
+                    <p className="text-gray-800 text-sm">{solution}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
 
 export default function Programmes() {
   const [activeTab, setActiveTab] = useState<ProgrammeType>('ripple')
@@ -417,19 +499,19 @@ export default function Programmes() {
 
       {/* Programme Cards */}
       <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
-          {/* Desktop: 4 cards in a row */}
-          <div className="hidden lg:grid lg:grid-cols-4 gap-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Desktop & Tablet: Horizontal tabs */}
+          <div className="hidden md:flex md:justify-center md:gap-3 lg:gap-4 md:flex-wrap lg:flex-nowrap">
             {programmes.map((programme) => {
               const Icon = programme.icon
               return (
                 <button
                   key={programme.id}
                   onClick={() => setActiveTab(programme.id)}
-                  className={`relative h-80 rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer ${
+                  className={`relative h-20 md:h-24 flex-1 md:min-w-[180px] lg:min-w-0 md:max-w-[280px] lg:max-w-xs rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer ${
                     activeTab === programme.id
-                      ? `ring-4 ${programme.borderColor} shadow-2xl scale-105`
-                      : 'hover:scale-102 shadow-lg hover:shadow-xl'
+                      ? 'shadow-2xl scale-105'
+                      : 'opacity-80 hover:opacity-100 shadow-lg hover:shadow-xl'
                   }`}
                 >
                   {/* Gradient Background */}
@@ -440,163 +522,139 @@ export default function Programmes() {
                     {programme.id === 'ripple' && (
                       <>
                         {/* Concentric circles for Ripple */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full border border-white/15"></div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 rounded-full border border-white/15"></div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border border-white/20"></div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border border-white/20"></div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border border-white/15"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border border-white/15"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-white/20"></div>
                       </>
                     )}
                     {programme.id === 'current' && (
                       <>
                         {/* Curved wave lines for Current */}
-                        <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M 0 100 Q 75 80, 150 100 T 300 100" stroke="white" strokeWidth="1.5" fill="none" />
-                          <path d="M 0 140 Q 75 120, 150 140 T 300 140" stroke="white" strokeWidth="1.5" fill="none" />
-                          <path d="M 0 180 Q 75 160, 150 180 T 300 180" stroke="white" strokeWidth="1.5" fill="none" />
-                          <path d="M 0 220 Q 75 200, 150 220 T 300 220" stroke="white" strokeWidth="1.5" fill="none" />
+                        <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                          <path d="M 0 30 Q 75 20, 150 30 T 300 30" stroke="white" strokeWidth="1.5" fill="none" />
+                          <path d="M 0 50 Q 75 40, 150 50 T 300 50" stroke="white" strokeWidth="1.5" fill="none" />
+                          <path d="M 0 70 Q 75 60, 150 70 T 300 70" stroke="white" strokeWidth="1.5" fill="none" />
                         </svg>
                       </>
                     )}
                     {programme.id === 'tide' && (
                       <>
                         {/* Ocean tide wave pattern */}
-                        <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                          {/* Flowing ocean waves */}
-                          <path d="M 0 180 Q 50 160, 100 180 T 200 180 T 300 180 T 400 180" stroke="white" strokeWidth="2" fill="none" />
-                          <path d="M 0 220 Q 50 200, 100 220 T 200 220 T 300 220 T 400 220" stroke="white" strokeWidth="2" fill="none" />
-                          <path d="M 0 260 Q 50 240, 100 260 T 200 260 T 300 260 T 400 260" stroke="white" strokeWidth="2" fill="none" />
-                          <path d="M 0 300 Q 50 280, 100 300 T 200 300 T 300 300 T 400 300" stroke="white" strokeWidth="1.5" fill="none" />
+                        <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                          <path d="M 0 30 Q 50 20, 100 30 T 200 30 T 300 30 T 400 30" stroke="white" strokeWidth="2" fill="none" />
+                          <path d="M 0 50 Q 50 40, 100 50 T 200 50 T 300 50 T 400 50" stroke="white" strokeWidth="2" fill="none" />
+                          <path d="M 0 70 Q 50 60, 100 70 T 200 70 T 300 70 T 400 70" stroke="white" strokeWidth="1.5" fill="none" />
                         </svg>
                       </>
                     )}
                     {programme.id === 'surge' && (
                       <>
                         {/* Curved wave lines for Surge */}
-                        <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M 50 150 Q 100 100, 150 150 T 250 150" stroke="white" strokeWidth="2" fill="none" />
-                          <path d="M 50 180 Q 100 130, 150 180 T 250 180" stroke="white" strokeWidth="2" fill="none" />
-                          <path d="M 50 210 Q 100 160, 150 210 T 250 210" stroke="white" strokeWidth="2" fill="none" />
+                        <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                          <path d="M 50 30 Q 100 20, 150 30 T 250 30" stroke="white" strokeWidth="2" fill="none" />
+                          <path d="M 50 50 Q 100 40, 150 50 T 250 50" stroke="white" strokeWidth="2" fill="none" />
+                          <path d="M 50 70 Q 100 60, 150 70 T 250 70" stroke="white" strokeWidth="2" fill="none" />
                         </svg>
                       </>
                     )}
                   </div>
 
-                  {/* Icon at Top */}
-                  <div className="absolute top-8 left-8 z-10 pointer-events-none">
-                    <Icon className="w-12 h-12 text-white" strokeWidth={1.5} />
-                  </div>
-
-                  {/* Program Name at Bottom Left */}
-                  <div className="absolute bottom-8 left-8 pointer-events-none">
-                    <h3 className="text-3xl font-bold text-white tracking-wide">
+                  {/* Content Container */}
+                  <div className="relative h-full flex items-center justify-center gap-2 md:gap-3 px-4 md:px-6 pointer-events-none">
+                    <Icon className="w-6 h-6 md:w-8 md:h-8 text-white flex-shrink-0" strokeWidth={1.5} />
+                    <h3 className="text-base md:text-xl font-bold text-white tracking-wide uppercase">
                       {programme.name}
                     </h3>
                   </div>
-
-                  {/* Active Indicator */}
-                  {activeTab === programme.id && (
-                    <div className="absolute top-6 right-6 w-3 h-3 bg-white rounded-full shadow-lg pointer-events-none"></div>
-                  )}
                 </button>
               )
             })}
           </div>
 
-          {/* Mobile/Tablet: Horizontal Scroll */}
-          <div className="lg:hidden overflow-x-auto scrollbar-hide -mx-2 sm:-mx-4 px-2 sm:px-4">
-            <div className="flex gap-4 min-w-max pb-4">
-              {programmes.map((programme) => {
-                const Icon = programme.icon
-                return (
-                  <button
-                    key={programme.id}
-                    onClick={() => setActiveTab(programme.id)}
-                    className={`relative w-72 h-80 rounded-3xl overflow-hidden flex-shrink-0 transition-all duration-300 cursor-pointer ${
-                      activeTab === programme.id
-                        ? `ring-4 ${programme.borderColor} shadow-2xl scale-105`
-                        : 'shadow-lg hover:shadow-xl'
-                    }`}
-                  >
-                    {/* Gradient Background */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${programme.gradient} pointer-events-none`}></div>
+          {/* Mobile: Grid layout (2x2) */}
+          <div className="md:hidden grid grid-cols-2 gap-3">
+            {programmes.map((programme) => {
+              const Icon = programme.icon
+              return (
+                <button
+                  key={programme.id}
+                  onClick={() => setActiveTab(programme.id)}
+                  className={`relative h-32 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer ${
+                    activeTab === programme.id
+                      ? 'shadow-2xl scale-105 ring-2 ring-white'
+                      : 'opacity-90 hover:opacity-100 shadow-lg'
+                  }`}
+                >
+                  {/* Gradient Background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${programme.gradient} pointer-events-none`}></div>
 
-                    {/* Pattern - Different for each card */}
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                      {programme.id === 'ripple' && (
-                        <>
-                          {/* Concentric circles for Ripple */}
-                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full border border-white/15"></div>
-                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 rounded-full border border-white/15"></div>
-                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border border-white/20"></div>
-                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border border-white/20"></div>
-                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10"></div>
-                        </>
-                      )}
-                      {programme.id === 'current' && (
-                        <>
-                          {/* Curved wave lines for Current */}
-                          <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M 0 100 Q 75 80, 150 100 T 300 100" stroke="white" strokeWidth="1.5" fill="none" />
-                            <path d="M 0 140 Q 75 120, 150 140 T 300 140" stroke="white" strokeWidth="1.5" fill="none" />
-                            <path d="M 0 180 Q 75 160, 150 180 T 300 180" stroke="white" strokeWidth="1.5" fill="none" />
-                            <path d="M 0 220 Q 75 200, 150 220 T 300 220" stroke="white" strokeWidth="1.5" fill="none" />
-                          </svg>
-                        </>
-                      )}
-                      {programme.id === 'tide' && (
-                        <>
-                          {/* Ocean tide wave pattern */}
-                          <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                            {/* Flowing ocean waves */}
-                            <path d="M 0 180 Q 50 160, 100 180 T 200 180 T 300 180 T 400 180" stroke="white" strokeWidth="2" fill="none" />
-                            <path d="M 0 220 Q 50 200, 100 220 T 200 220 T 300 220 T 400 220" stroke="white" strokeWidth="2" fill="none" />
-                            <path d="M 0 260 Q 50 240, 100 260 T 200 260 T 300 260 T 400 260" stroke="white" strokeWidth="2" fill="none" />
-                            <path d="M 0 300 Q 50 280, 100 300 T 200 300 T 300 300 T 400 300" stroke="white" strokeWidth="1.5" fill="none" />
-                          </svg>
-                        </>
-                      )}
-                      {programme.id === 'surge' && (
-                        <>
-                          {/* Curved wave lines for Surge */}
-                          <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M 50 150 Q 100 100, 150 150 T 250 150" stroke="white" strokeWidth="2" fill="none" />
-                            <path d="M 50 180 Q 100 130, 150 180 T 250 180" stroke="white" strokeWidth="2" fill="none" />
-                            <path d="M 50 210 Q 100 160, 150 210 T 250 210" stroke="white" strokeWidth="2" fill="none" />
-                          </svg>
-                        </>
-                      )}
-                    </div>
-
-                    {/* Icon at Top */}
-                    <div className="absolute top-8 left-8 z-10 pointer-events-none">
-                      <Icon className="w-12 h-12 text-white" strokeWidth={1.5} />
-                    </div>
-
-                    {/* Program Name at Bottom Left */}
-                    <div className="absolute bottom-8 left-8 pointer-events-none">
-                      <h3 className="text-3xl font-bold text-white tracking-wide">
-                        {programme.name}
-                      </h3>
-                    </div>
-
-                    {/* Active Indicator */}
-                    {activeTab === programme.id && (
-                      <div className="absolute top-6 right-6 w-3 h-3 bg-white rounded-full shadow-lg pointer-events-none"></div>
+                  {/* Pattern - Different for each card */}
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    {programme.id === 'ripple' && (
+                      <>
+                        {/* Concentric circles for Ripple */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border border-white/15"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border border-white/15"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/20"></div>
+                      </>
                     )}
-                  </button>
-                )
-              })}
-            </div>
+                    {programme.id === 'current' && (
+                      <>
+                        {/* Curved wave lines for Current */}
+                        <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                          <path d="M 0 60 Q 50 50, 100 60 T 200 60" stroke="white" strokeWidth="1.5" fill="none" />
+                          <path d="M 0 100 Q 50 90, 100 100 T 200 100" stroke="white" strokeWidth="1.5" fill="none" />
+                          <path d="M 0 140 Q 50 130, 100 140 T 200 140" stroke="white" strokeWidth="1.5" fill="none" />
+                        </svg>
+                      </>
+                    )}
+                    {programme.id === 'tide' && (
+                      <>
+                        {/* Ocean tide wave pattern */}
+                        <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                          <path d="M 0 60 Q 25 50, 50 60 T 100 60 T 150 60 T 200 60" stroke="white" strokeWidth="2" fill="none" />
+                          <path d="M 0 100 Q 25 90, 50 100 T 100 100 T 150 100 T 200 100" stroke="white" strokeWidth="2" fill="none" />
+                          <path d="M 0 140 Q 25 130, 50 140 T 100 140 T 150 140 T 200 140" stroke="white" strokeWidth="1.5" fill="none" />
+                        </svg>
+                      </>
+                    )}
+                    {programme.id === 'surge' && (
+                      <>
+                        {/* Curved wave lines for Surge */}
+                        <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                          <path d="M 30 60 Q 65 50, 100 60 T 170 60" stroke="white" strokeWidth="2" fill="none" />
+                          <path d="M 30 100 Q 65 90, 100 100 T 170 100" stroke="white" strokeWidth="2" fill="none" />
+                          <path d="M 30 140 Q 65 130, 100 140 T 170 140" stroke="white" strokeWidth="2" fill="none" />
+                        </svg>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Content Container - Vertical layout for mobile */}
+                  <div className="relative h-full flex flex-col items-center justify-center gap-2 px-3 pointer-events-none">
+                    <Icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                    <h3 className="text-sm font-bold text-white tracking-wide uppercase text-center">
+                      {programme.name}
+                    </h3>
+                  </div>
+                </button>
+              )
+            })}
           </div>
+
         </div>
       </section>
 
       {/* You're Here & You Want to Achieve Section */}
       <section className="py-2 lg:py-2 bg-white relative overflow-hidden">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
-          {/* Flow Diagram */}
-          <div className="relative py-2">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mobile Accordion View */}
+          <div className="block lg:hidden py-8">
+            <FlowDiagramAccordion content={content} activeTab={activeTab} />
+          </div>
+
+          {/* Desktop Flow Diagram */}
+          <div className="relative pb-20 hidden lg:block">
             <div className="grid grid-cols-[1fr_200px_1fr] gap-4">
               {/* Problems/Points - Left Side */}
               <div className="space-y-3">
@@ -784,7 +842,7 @@ export default function Programmes() {
 
       {/* What Will Help Section */}
       <section className="py-16 lg:py-20 bg-gray-50">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-header mb-6 text-center">
             {content.whatWillHelp.title}
           </h2>
@@ -883,7 +941,7 @@ export default function Programmes() {
       {/* More About Section */}
       {activeTab !== 'surge' && (
         <section className="py-16 lg:py-20 bg-white">
-          <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-header mb-12 text-center">
               {(content as any).moreAbout.title}
             </h2>
@@ -935,19 +993,19 @@ export default function Programmes() {
 
       {/* Tools Section */}
       <section className="py-12 bg-gray-50">
-        <div className="max-w-[1300px] mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-2xl font-bold text-text-header mb-6 text-center">
             {activeTab === 'surge' ? 'Tools that are used' : "Tools You'll Actually Use"}
           </h3>
           <div className="flex flex-wrap justify-center gap-6 items-center">
             {content.tools.map((tool, index) => {
               const logoMap: { [key: string]: string } = {
-                'Calendly': '/assets/Brands/Calendly.svg',
-                'Google Forms': '/assets/Brands/googleForms.webp',
-                'SurveyMonkey': '/assets/Brands/surveyMonkey.webp',
-                'Dovetail': '/assets/Brands/dovetail.png',
-                'Hotjar': '/assets/Brands/hotjar.webp',
-                'Microsoft Clarity': '/assets/Brands/clarity.png',
+                'Calendly': '/assets/Calendly.svg',
+                'Google Forms': '/assets/googleForms.webp',
+                'SurveyMonkey': '/assets/surveyMonkey.webp',
+                'Dovetail': '/assets/dovetail.png',
+                'Hotjar': '/assets/hotjar.webp',
+                'Microsoft Clarity': '/assets/clarity.png',
               };
 
               return (
@@ -970,7 +1028,7 @@ export default function Programmes() {
 
       {/* Achievements Section */}
       <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-text-header mb-8 text-center">
             {content.achievements.count}
           </h2>
@@ -1029,7 +1087,7 @@ export default function Programmes() {
 
       {/* Closing Note */}
       <section className="py-12 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-lg text-text-body leading-relaxed mb-8">{content.closingNote}</p>
 
           {/* Image Placeholder */}
@@ -1045,7 +1103,7 @@ export default function Programmes() {
       {/* Stats Section (for Current and Tide) */}
       {(activeTab === 'current' || activeTab === 'tide') && (content as any).stats && (
         <section className="py-12 bg-white">
-          <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-2xl font-bold text-text-header mb-8 text-center">
               So many goals achieved, wish we could capture all there smiles, but here are a few
             </h3>
@@ -1069,7 +1127,7 @@ export default function Programmes() {
 
       {/* Video Testimonial Section */}
       {/* <section className="py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center border-4 border-dashed border-gray-400 shadow-xl">
             <div className="text-center">
               <div className="text-6xl mb-4">🎥</div>
@@ -1081,7 +1139,7 @@ export default function Programmes() {
 
       {/* Final Testimonial */}
       <section className={`py-16 bg-gradient-to-br ${programmes.find(p => p.id === activeTab)?.bgColor}`}>
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xl sm:text-2xl text-white leading-relaxed mb-8 whitespace-pre-line">
             {content.testimonial}
           </p>
@@ -1103,7 +1161,7 @@ export default function Programmes() {
 
       {/* FAQ Section */}
       <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-header mb-12 text-center">
             Frequently Asked Questions
           </h2>

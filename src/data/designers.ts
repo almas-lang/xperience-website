@@ -42,7 +42,7 @@ export const designers: Designer[] = [
     location: 'Bangalore, India',
     type: 'Full-time',
     skills: ['UI Design', 'UX Design', 'Prototyping', 'Figma'],
-    image: '/assets/hires/anzar.png',
+    image: '/assets/anzar.png',
     linkedin: 'https://www.linkedin.com/in/md-anzar/',
   },
   {
@@ -53,7 +53,7 @@ export const designers: Designer[] = [
     location: 'Bangalore, India',
     type: 'Full-time',
     skills: ['Product Design', 'UI Design', 'UX Research', 'Design Systems'],
-    image: '/assets/hires/VK.jpeg',
+    image: '/assets/VK.jpeg',
     linkedin: 'https://www.linkedin.com/in/vikramrajak/',
   },
   {
@@ -64,7 +64,7 @@ export const designers: Designer[] = [
     location: 'Bangalore, India',
     type: 'Contract',
     skills: ['UX Strategy', 'Mentorship', 'Design Leadership', 'Consulting'],
-    image: '/assets/hires/pratika.jpeg',
+    image: '/assets/pratika.jpeg',
     linkedin: 'https://www.linkedin.com/in/pratika-chavan/',
   },
   {
@@ -75,7 +75,7 @@ export const designers: Designer[] = [
     location: 'Bangalore, India',
     type: 'Full-time',
     skills: ['Product Design', 'User Research', 'Design Thinking', 'Figma'],
-    image: '/assets/hires/huseini.jpeg',
+    image: '/assets/huseini.jpeg',
     linkedin: 'https://www.linkedin.com/in/huseini/',
   },
   {
@@ -86,7 +86,7 @@ export const designers: Designer[] = [
     location: 'Bangalore, India',
     type: 'Full-time',
     skills: ['UI/UX Design', 'Interaction Design', 'Design Systems', 'Prototyping'],
-    image: '/assets/hires/aswin.png',
+    image: '/assets/aswin.png',
     linkedin: 'https://www.linkedin.com/in/aswinkumarnair/',
   },
   {
@@ -97,7 +97,7 @@ export const designers: Designer[] = [
     location: 'Bangalore, India',
     type: 'Full-time',
     skills: ['Product Design', 'UX Design', 'Visual Design', 'Figma'],
-    image: '/assets/hires/abhipsa.jpeg',
+    image: '/assets/abhipsa.jpeg',
     linkedin: 'https://www.linkedin.com/in/abhipsa-panda06/',
   },
 ]
