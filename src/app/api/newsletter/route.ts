@@ -22,33 +22,48 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Send to Brevo
-    const brevoResponse = await fetch('https://api.brevo.com/v3/contacts', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'api-key': process.env.NEXT_PUBLIC_BREVO_API_KEY || '',
-      },
-      body: JSON.stringify({
-        email: email,
-        listIds: [parseInt(process.env.NEXT_PUBLIC_BREVO_LIST_ID || '50')],
-        updateEnabled: true,
-      }),
-    })
+    // Save to separate Newsletter Google Sheet
+    const newsletterWebhookUrl = process.env.NEWSLETTER_SHEETS_WEBHOOK_URL
 
-    // 201 = created, 204 = updated, 409 = already exists
-    if (brevoResponse.ok || brevoResponse.status === 409) {
-      return NextResponse.json({ success: true }, { status: 200 })
+    if (!newsletterWebhookUrl) {
+      console.error('Newsletter Google Sheets webhook URL not configured')
+      return NextResponse.json(
+        { error: 'Newsletter service not configured. Please try again later.' },
+        { status: 500 }
+      )
     }
 
-    const errorData = await brevoResponse.json()
-    console.error('Brevo API Error:', errorData)
+    try {
+      const sheetsResponse = await fetch(newsletterWebhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          timestamp: new Date().toISOString(),
+        }),
+      })
 
-    return NextResponse.json(
-      { error: 'Failed to subscribe. Please try again.' },
-      { status: 500 }
-    )
+      if (sheetsResponse.ok) {
+        console.log('✅ Newsletter subscriber saved to Google Sheets')
+        return NextResponse.json({ success: true }, { status: 200 })
+      }
+
+      const errorData = await sheetsResponse.text()
+      console.error('Newsletter Google Sheets Error:', errorData)
+
+      return NextResponse.json(
+        { error: 'Failed to subscribe. Please try again.' },
+        { status: 500 }
+      )
+    } catch (sheetsError) {
+      console.error('Newsletter Google Sheets Error:', sheetsError)
+      return NextResponse.json(
+        { error: 'Failed to subscribe. Please try again.' },
+        { status: 500 }
+      )
+    }
   } catch (error) {
     console.error('Server error:', error)
     return NextResponse.json(
